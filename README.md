@@ -2,6 +2,8 @@
 
 Store user login on an Express Session (through cookies) that gets stored in a MongoDB collection. Section 14 Assignment 5 of NodeJS - The Complete Guide (MVC, REST APIs, GraphQL, Deno).
 
+Since the user is stored on the session, it's stored as a plain object, not a mongoose object. Therefore some methods like getting the cart will fail.
+
 ## Installation
 
 *Make sure to have [Git](http://git-scm.com/) and [Node.js](http://nodejs.org/) 10.0.0 (or higher) installed.*
