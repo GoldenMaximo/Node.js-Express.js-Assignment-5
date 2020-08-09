@@ -26,7 +26,7 @@ or the best:
 pnpm install
 ```
 
-3. Create an .env file with the following properties according to your local MongoDB configuration:
+3. Create an .env file with the following properties according to your MongoDB configuration:
 
 ```
 DB_USER=*
