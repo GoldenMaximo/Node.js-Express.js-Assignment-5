@@ -35,30 +35,11 @@ app.use(session({
     store
 }));
 
-app.use((req, res, next) => {
-    User.findById('5f29ed379cafa817e007f3a8').then(user => {
-        req.user = user;
-        next();
-    }).catch(err => console.log(err));
-});
-
 app.use('/admin', adminRoutes);
 app.use(shopRoutes);
 app.use(authRoutes);
 app.use(notFoundRoute);
 
 mongoose.connect(MONGODB_URI).then(connection => {
-    User.findOne().then(user => {
-        if (!user) {
-            const user = new User({
-                name: 'Maximo',
-                email: 'whatever@gmail.com',
-                cart: {
-                    items: []
-                }
-            });
-            user.save();
-        }
-    })
     app.listen(3000);
 }).catch(err => console.log(err));
